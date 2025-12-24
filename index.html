@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3 Years With Srija ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #fde2e4, #fadadd);
+  overflow-x: hidden;
+  text-align: center;
+  color: #333;
+}
+
+/* Start screen */
+#startScreen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #fde2e4, #fadadd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#startScreen button {
+  padding: 16px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #c2185b;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Rose petals */
+.petal {
+  position: fixed;
+  top: -20px;
+  font-size: 22px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  padding: 25px;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  color: #b0003a;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+.name {
+  font-size: 34px;
+  font-weight: bold;
+  color: #c2185b;
+  margin: 10px 0 20px;
+  letter-spacing: 2px;
+}
+
+.message {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: auto;
+}
+
+.gif-container {
+  margin: 30px auto;
+  animation: fadeIn 2.5s ease;
+}
+
+.gif-container img {
+  width: 220px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.gallery {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 1s ease forwards;
+}
+
+.gallery img:nth-child(1){animation-delay:0.3s}
+.gallery img:nth-child(2){animation-delay:0.6s}
+.gallery img:nth-child(3){animation-delay:0.9s}
+.gallery img:nth-child(4){animation-delay:1.2s}
+.gallery img:nth-child(5){animation-delay:1.5s}
+
+footer {
+  margin: 35px 0 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+  <button onclick="startLove()">Click to Begin ❤️</button>
+</div>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <h1>Happy 3 Years Love Anniversary</h1>
+  <div class="name">SRIJA ❤️</div>
+
+  <div class="message">
+    Three beautiful years with you.  
+    Distance tested us, but love always won.  
+    Thank you for being my constant and my peace.  
+    Every heartbeat of mine carries your name.
+  </div>
+
+  <div class="gif-container">
+    <img src="kiss.gif">
+  </div>
+
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+  </div>
+
+  <footer>
+    Forever yours ❤️
+  </footer>
+
+</div>
+
+<script>
+function startLove() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("music").play();
+
+  for (let i = 0; i < 20; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = "🌹";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(petal);
+  }
+}
+</script>
+
+</body>
+</html>
