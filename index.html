@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>3 Years With Srija ❤️</title>
+<title>Forever With Srija ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #fde2e4, #fadadd);
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #fff0f3, #f6c1cc);
   overflow-x: hidden;
   text-align: center;
-  color: #333;
+  color: #3a2b2f;
 }
 
-/* Start screen */
+/* ---------- START SCREEN ---------- */
 #startScreen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, #fde2e4, #fadadd);
+  background: radial-gradient(circle at top, #fff0f3, #f3b6c4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,147 +32,176 @@ body {
 }
 
 #startScreen button {
-  padding: 16px 30px;
-  font-size: 18px;
+  padding: 18px 36px;
+  font-size: 20px;
   border: none;
-  border-radius: 30px;
-  background: #c2185b;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #d6336c, #a61e4d);
   color: white;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: transform .3s;
 }
 
-/* Rose petals */
+#startScreen button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- ROSE PETALS ---------- */
 .petal {
   position: fixed;
-  top: -20px;
-  font-size: 22px;
+  top: -30px;
+  font-size: 24px;
   animation: fall linear infinite;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 @keyframes fall {
   to {
-    transform: translateY(110vh) rotate(360deg);
+    transform: translateY(120vh) rotate(360deg);
     opacity: 0;
   }
 }
 
+/* ---------- MAIN CARD ---------- */
 .container {
-  padding: 25px;
-  animation: fadeIn 2s ease;
+  max-width: 820px;
+  margin: auto;
+  padding: 40px 20px 60px;
+  animation: fadeUp 2s ease;
 }
 
+.card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  padding: 40px 25px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* ---------- HEADINGS ---------- */
 h1 {
-  color: #b0003a;
-  font-size: 30px;
-  margin-top: 25px;
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  color: #8b1e3f;
+  margin-bottom: 5px;
 }
 
 .name {
-  font-size: 34px;
-  font-weight: bold;
-  color: #c2185b;
-  margin: 10px 0 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  color: #b02a4b;
+  margin: 10px 0 25px;
   letter-spacing: 2px;
 }
 
+/* ---------- MESSAGE ---------- */
 .message {
   font-size: 18px;
-  line-height: 1.7;
-  max-width: 520px;
+  line-height: 1.9;
+  max-width: 620px;
   margin: auto;
 }
 
+/* ---------- GIF ---------- */
 .gif-container {
-  margin: 30px auto;
-  animation: fadeIn 2.5s ease;
+  margin: 35px 0 15px;
 }
 
 .gif-container img {
-  width: 220px;
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  width: 230px;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
+/* ---------- GALLERY ---------- */
 .gallery {
-  margin-top: 25px;
+  margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
   opacity: 0;
-  transform: scale(0.9);
-  animation: zoomIn 1s ease forwards;
+  transform: translateY(30px) scale(.95);
+  animation: reveal 1s ease forwards;
 }
 
-.gallery img:nth-child(1){animation-delay:0.3s}
-.gallery img:nth-child(2){animation-delay:0.6s}
-.gallery img:nth-child(3){animation-delay:0.9s}
+.gallery img:nth-child(1){animation-delay:.3s}
+.gallery img:nth-child(2){animation-delay:.6s}
+.gallery img:nth-child(3){animation-delay:.9s}
 .gallery img:nth-child(4){animation-delay:1.2s}
 .gallery img:nth-child(5){animation-delay:1.5s}
 
+/* ---------- FOOTER ---------- */
 footer {
-  margin: 35px 0 20px;
+  margin-top: 40px;
   font-size: 16px;
-  color: #555;
+  opacity: .75;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-@keyframes zoomIn {
-  to { opacity: 1; transform: scale(1); }
+@keyframes reveal {
+  to {
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- START SCREEN -->
 <div id="startScreen">
   <button onclick="startLove()">Click to Begin ❤️</button>
 </div>
 
+<!-- MUSIC -->
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- CONTENT -->
 <div class="container">
+  <div class="card">
 
-  <h1>Happy 3 Years Love Anniversary</h1>
-  <div class="name">SRIJA ❤️</div>
+    <h1>Happy 3 Years Love Anniversary</h1>
+    <div class="name">SRIJA ❤️</div>
 
-  <div class="message">
-    Three beautiful years with you.  
-    Distance tested us, but love always won.  
-    Thank you for being my constant and my peace.  
-    Every heartbeat of mine carries your name.
+    <div class="message">
+      Three years of love, patience, and faith.  
+      Distance tried to challenge us, but it never stood a chance.  
+      You are my calm, my happiness, my forever.  
+      Every heartbeat of mine whispers your name.
+    </div>
+
+    <div class="gif-container">
+      <img src="kiss.gif">
+    </div>
+
+    <div class="gallery">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
+      <img src="photo4.jpg">
+      <img src="photo5.jpg">
+    </div>
+
+    <footer>
+      Forever yours ❤️
+    </footer>
+
   </div>
-
-  <div class="gif-container">
-    <img src="kiss.gif">
-  </div>
-
-  <div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
-    <img src="photo4.jpg">
-    <img src="photo5.jpg">
-  </div>
-
-  <footer>
-    Forever yours ❤️
-  </footer>
-
 </div>
 
 <script>
@@ -177,12 +209,12 @@ function startLove() {
   document.getElementById("startScreen").style.display = "none";
   document.getElementById("music").play();
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 22; i++) {
     let petal = document.createElement("div");
     petal.className = "petal";
     petal.innerHTML = "🌹";
     petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    petal.style.animationDuration = (6 + Math.random() * 6) + "s";
     document.body.appendChild(petal);
   }
 }
