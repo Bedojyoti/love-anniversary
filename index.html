@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Our Little Love Story ❤️</title>
+<title>Our Love Story ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -54,22 +54,22 @@ body {
 
 /* STORY PAGES */
 .page {
-  max-width: 750px;
-  margin: 60px auto;
+  max-width: 760px;
+  margin: 70px auto;
   background: rgba(255,255,255,0.75);
-  padding: 35px 25px;
+  padding: 40px 25px;
   border-radius: 30px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  animation: fadeUp 1.5s ease;
 }
 
+/* TEXT */
 h1, h2 {
   font-family: "Patrick Hand", cursive;
   text-align: center;
 }
 
 h1 { font-size: 38px; }
-h2 { font-size: 30px; margin-bottom: 10px; }
+h2 { font-size: 30px; }
 
 p {
   font-size: 18px;
@@ -86,46 +86,29 @@ p {
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
-/* CLICK NOTES */
-.note {
+/* SECRET NOTES */
+.secret {
   margin-top: 15px;
-  font-size: 16px;
-  opacity: 0.7;
   cursor: pointer;
+  opacity: 0.75;
 }
 
-.note span {
+.secret span {
   display: none;
   font-style: italic;
 }
 
-/* FINAL BUTTON */
-.final {
-  text-align: center;
-  margin: 60px 0;
-}
-
-.final button {
-  padding: 16px 34px;
-  border-radius: 40px;
-  border: none;
-  background: #ff477e;
-  color: white;
-  font-size: 18px;
+/* STICKERS */
+.stickers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 38px;
+  margin-top: 20px;
   cursor: pointer;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.love-video {
-  display: block;
-  margin: 25px auto;
-  width: 240px;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
+/* VIDEO */
 .video-wrapper {
   opacity: 0;
   transform: translateY(40px);
@@ -140,7 +123,7 @@ p {
 
 .love-video {
   display: block;
-  margin: 0 auto;
+  margin: auto;
   width: 240px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
@@ -148,20 +131,63 @@ p {
 
 .caption {
   margin-top: 10px;
-  font-size: 16px;
   font-family: "Patrick Hand", cursive;
+  text-align: center;
   opacity: 0.8;
 }
-window.addEventListener("scroll", () => {
-  const videoSection = document.querySelector(".video-wrapper");
-  const rect = videoSection.getBoundingClientRect();
 
-  if (rect.top < window.innerHeight - 100) {
-    videoSection.classList.add("show");
-    videoSection.querySelector("video").play();
-  }
-});
+/* HEART */
+.big-heart {
+  font-size: 60px;
+  text-align: center;
+  cursor: pointer;
+  margin: 25px 0;
+}
 
+/* FINAL BUTTON */
+.final {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.final button {
+  padding: 16px 34px;
+  border-radius: 40px;
+  border: none;
+  background: #ff477e;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* SECRET PAGE */
+#secret-page {
+  display: none;
+  padding: 50px;
+  text-align: center;
+  background: #ffe4ec;
+  min-height: 100vh;
+}
+
+#secret-page h1 {
+  animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes sparkle {
+  0% { color: #ff477e; }
+  50% { color: #ff85ab; }
+  100% { color: #ff477e; }
+}
+
+#secret-page button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#ff5d8f;
+  color:white;
+  cursor:pointer;
+}
 </style>
 </head>
 
@@ -178,45 +204,57 @@ window.addEventListener("scroll", () => {
 <!-- PAGE 1 -->
 <div class="page">
   <h1>Our Little Love Story</h1>
-  <p>Once upon a time… two hearts found each other.</p>
+  <p>Once upon a time, two hearts found each other.</p>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page">
-  <h2>Then came you, SRIJA ❤️</h2>
-  <p>You slowly became my favorite thought, my comfort, my smile.</p>
+  <h2>SRIJA ❤️</h2>
+  <p>You slowly became my favorite person.</p>
+
+  <div class="stickers">
+    <span onclick="this.innerText='✨'">🐻</span>
+    <span onclick="this.innerText='💖'">🌸</span>
+    <span onclick="this.innerText='✨'">🐰</span>
+  </div>
 </div>
 
 <!-- PAGE 3 -->
 <div class="page">
-  <h2>Even Distance Couldn’t Stop Us</h2>
-  <p>Every call, every message made me fall for you all over again.</p>
+  <h2>Distance Couldn’t Stop Us</h2>
+  <p>Every message, every call made us stronger.</p>
   <img src="photo1.jpg">
 </div>
 
 <!-- PAGE 4 -->
 <div class="page">
-  <h2>My Favorite Moments</h2>
+  <h2>Our Moments</h2>
   <img src="photo2.jpg">
   <img src="photo3.jpg">
 </div>
 
-<!-- PAGE 5 -->
-<div class="video-wrapper">
-  <video class="love-video" muted loop playsinline>
-    <source src="kiss.mp4" type="video/mp4">
-  </video>
-  <div class="caption">A little kiss, just for you 💋</div>
-</div>
+<!-- PAGE 5 VIDEO -->
+<div class="page">
+  <h2>Just For You</h2>
 
+  <div class="video-wrapper">
+    <video class="love-video" muted loop playsinline>
+      <source src="kiss.mp4" type="video/mp4">
+    </video>
+    <div class="caption">A little kiss from me to you 💋</div>
+  </div>
+</div>
 
 <!-- PAGE 6 -->
 <div class="page">
-  <h2>3 Years Strong</h2>
-  <p>And I still choose you. Every single day.</p>
-  <div class="note" onclick="this.querySelector('span').style.display='block'">
-    Tap here 💌
-    <span>One day, I want to hold your hand and never let go.</span>
+  <h2>Three Years Strong</h2>
+  <p>And I still choose you.</p>
+
+  <div class="big-heart" onclick="heartBurst()">❤️</div>
+
+  <div class="secret" onclick="this.querySelector('span').style.display='block'">
+    Tap gently 💌
+    <span>I want a lifetime with you.</span>
   </div>
 </div>
 
@@ -225,6 +263,18 @@ window.addEventListener("scroll", () => {
   <button onclick="alert('Happy 3 Years, Srija ❤️ You are my forever.')">
     The End… or Just the Beginning 💖
   </button>
+</div>
+
+<!-- SECRET PAGE -->
+<div id="secret-page">
+  <h1>🎉 Surprise Srija! 🎉</h1>
+  <p>You found the hidden page! ❤️</p>
+  <p>This is my little love letter just for you…</p>
+  <img src="photo4.jpg" style="width:240px; border-radius:25px; margin-top:20px;">
+  <p style="margin-top:20px; font-family:'Patrick Hand', cursive; font-size:18px;">
+    I love you more than words can say. Three years together, a lifetime to go. 💖
+  </p>
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to Story</button>
 </div>
 
 <script>
@@ -240,6 +290,35 @@ function begin() {
     p.style.animationDuration = (6 + Math.random() * 6) + "s";
     document.body.appendChild(p);
   }
+}
+
+// VIDEO FADE IN ON SCROLL
+window.addEventListener("scroll", () => {
+  const v = document.querySelector(".video-wrapper");
+  if (!v) return;
+  const rect = v.getBoundingClientRect();
+  if (rect.top < window.innerHeight - 100) {
+    v.classList.add("show");
+    v.querySelector("video").play();
+  }
+});
+
+// HEART CONFETTI + SECRET PAGE
+function heartBurst() {
+  for (let i = 0; i < 20; i++) {
+    let h = document.createElement("div");
+    h.innerText = "💗";
+    h.style.position = "fixed";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.top = "50vh";
+    h.style.fontSize = "24px";
+    h.style.animation = "fall 2s linear";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 2000);
+  }
+  // Unlock secret page
+  document.getElementById("secret-page").style.display = "block";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 </script>
 
