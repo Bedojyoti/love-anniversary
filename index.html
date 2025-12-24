@@ -126,6 +126,41 @@ p {
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
+.video-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease;
+  margin-top: 30px;
+}
+
+.video-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.love-video {
+  display: block;
+  margin: 0 auto;
+  width: 240px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: "Patrick Hand", cursive;
+  opacity: 0.8;
+}
+window.addEventListener("scroll", () => {
+  const videoSection = document.querySelector(".video-wrapper");
+  const rect = videoSection.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight - 100) {
+    videoSection.classList.add("show");
+    videoSection.querySelector("video").play();
+  }
+});
 
 </style>
 </head>
@@ -167,14 +202,13 @@ p {
 </div>
 
 <!-- PAGE 5 -->
-<div class="page">
-  <h2>Just For You</h2>
-  <p>This one is special…</p>
-  <video class="love-video" autoplay muted loop playsinline>
-  <source src="kiss.mp4" type="video/mp4">
-</video>
-
+<div class="video-wrapper">
+  <video class="love-video" muted loop playsinline>
+    <source src="kiss.mp4" type="video/mp4">
+  </video>
+  <div class="caption">A little kiss, just for you 💋</div>
 </div>
+
 
 <!-- PAGE 6 -->
 <div class="page">
